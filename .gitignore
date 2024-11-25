@@ -1,0 +1,30 @@
+# Node.js dependencies
+node_modules/
+
+# Tailwind build output
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+*.swp
+
+# Jest coverage reports
+coverage/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build tools
+*.cache/
