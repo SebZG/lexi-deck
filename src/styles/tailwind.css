@@ -1,3 +1,304 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+        scrollbar-gutter: auto !important;
+    }
+
+    html:has(.drawer-toggle:checked) {
+        overflow: hidden;
+        padding-right: 0 !important;
+    }
+
+    ::selection {
+        @apply text-accent-content bg-accent;
+    }
+
+    /* body {
+        @apply ;
+    } */
+
+    #drawer {
+        @apply bg-base-300;
+    }
+
+    #drawer-content {
+        @apply flex flex-col min-h-screen;
+    }
+
+    #drawer-sidebar {
+        @apply z-50;
+    }
+
+    nav {
+        @apply w-full shadow-2xl bg-base-100;
+    }
+
+    nav .navbar {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    main {
+        @apply flex-1 flex flex-col  items-center w-full;
+    }
+
+    #search-section {
+        @apply w-[420px] mt-[6%] mb-[7%] pt-6 px-7 pb-11 bg-base-100 card shadow-lg;
+    }
+
+    footer {
+        @apply footer footer-center bg-base-100 text-base-content rounded gap-4 p-5;
+    }
+}
+
+@layer components {
+
+    nav .navbar-start a {
+        @apply btn btn-ghost text-2xl text-base-content;
+    }
+
+    nav .navbar-end label {
+        @apply btn btn-ghost btn-circle drawer-button;
+    }
+
+    nav .navbar-end label[data-drawer="favorites"] {
+        @apply text-error;
+    }
+
+    nav .navbar-end label[data-drawer="themes"] {
+        @apply text-warning;
+    }
+
+    nav .navbar-end span {
+        @apply w-7 h-7;
+    }
+
+    /* Search wrapper */
+
+    #search-section h1 {
+        @apply text-2xl font-semibold text-center text-base-content;
+    }
+
+    #search-section .search-wrapper {
+        @apply relative mt-9 mx-0 mb-3;
+    }
+
+    /* Search Input */
+
+    #search-section .search-input {
+        @apply input input-bordered h-14 w-full outline-0 text-base py-0 px-11;
+    }
+
+    #search-section .search-input:focus {
+        @apply py-0 px-11 input-accent;
+    }
+
+    #search-section .search-input::placeholder {
+        @apply text-accent;
+    }
+
+    #search-section .search-wrapper :where(span) {
+        @apply w-5 h-5 absolute top-1/2 text-base-300 -translate-y-1/2;
+    }
+
+    #search-section .search-wrapper [data-icon="search"] {
+        @apply left-3 pointer-events-none text-base;
+    }
+
+    #search-section .search-wrapper input:focus~[data-icon="search"] {
+        @apply text-accent;
+    }
+
+    #search-section .search-wrapper [data-icon="close"] {
+        @apply right-4 cursor-pointer text-lg hidden;
+    }
+
+    #search-section .search-wrapper input:valid~[data-icon="close"] {
+        @apply block text-accent;
+    }
+
+    /* Word Definition displays */
+
+    #search-section .info-text {
+        @apply text-sm -mt-1 mx-0 -mb-3;
+    }
+
+    #search-section.active .info-text {
+        @apply hidden;
+    }
+
+    #search-section .info-text span {
+        @apply font-medium;
+    }
+
+    #search-section ul {
+        @apply h-0 opacity-0 pr-1 overflow-y-hidden transition-all duration-200 ease-in-out;
+    }
+
+    #search-section.active ul {
+        @apply opacity-100 h-[303px];
+    }
+
+    #search-section ul li {
+        @apply flex justify-between items-center list-none mb-3 pb-4 border-b border-solid border-base-content;
+    }
+
+    #search-section ul li:last-child {
+        @apply mb-0 border-b-0 pb-0;
+    }
+
+    /* Word Details Icons */
+
+    #search-section ul .word {
+        @apply flex justify-between items-center;
+    }
+
+    #search-section ul .word-icons {
+        @apply flex gap-1 items-center;
+    }
+
+    #search-section ul .word span[data-icon] {
+        @apply w-6 h-6 cursor-pointer transition-all duration-200 ease-in-out text-base-content;
+    }
+
+    /* Volume icon container */
+    #search-section ul .word .volume-container {
+        @apply w-6 flex justify-center items-center;
+    }
+
+    #search-section ul .word span[data-icon="heart"]:hover {
+        @apply transform scale-125 text-error;
+    }
+
+    #search-section ul .word span[data-icon="heart"].active {
+        @apply text-error;
+    }
+
+    #search-section ul .word span[data-icon="volume-low"]:hover {
+        @apply transform scale-125 text-info;
+    }
+
+    #search-section ul .word span[data-icon="volume-high"] {
+        @apply transform scale-125 text-info;
+    }
+
+    /* Word Details */
+
+    #search-section ul .word p {
+        @apply text-xl font-medium text-base-content;
+    }
+
+    #search-section ul .word span {
+        @apply text-xs text-base-content;
+    }
+
+    #search-section ul .word .details {
+        @apply flex-1 mr-5;
+    }
+
+    /* Definition Content */
+
+    #search-section ul .content {
+        @apply max-h-[215px] overflow-y-auto;
+        /* Firefox */
+        scrollbar-width: none;
+        /* IE and Edge */
+        -ms-overflow-style: none;
+    }
+
+    #search-section ul .content::-webkit-scrollbar {
+        @apply w-0;
+    }
+
+    #search-section .content li .details {
+        @apply pl-3 rounded-tl-md rounded-bl-md border-l-4 border-solid border-accent;
+    }
+
+    #search-section .content li p {
+        @apply text-base font-medium text-base-content;
+    }
+
+    #search-section .content li span {
+        @apply text-sm text-base-content;
+    }
+
+    /* Synonyms */
+
+    #search-section .content .synonyms .list {
+        @apply flex flex-wrap;
+    }
+
+    #search-section .content .synonyms span {
+        @apply cursor-pointer mr-1 underline;
+    }
+
+    /* Drawer */
+
+    #drawer-content-wrapper {
+        @apply relative bg-base-200 w-80 min-h-screen;
+    }
+
+    #favorites-content-wrapper,
+    #themes-content-wrapper {
+        @apply h-screen relative;
+    }
+
+    #favorites-content-wrapper #favorites-menu-title-wrapper,
+    #themes-content-wrapper #themes-menu-title-wrapper {
+        @apply absolute top-0 left-0 right-0 bg-base-200 p-4 z-10;
+    }
+
+    #favorites-content-wrapper #favorites-menu-title-wrapper div:first-child,
+    #themes-content-wrapper #themes-menu-title-wrapper div:first-child {
+        @apply flex justify-between items-center mb-4;
+    }
+
+    #favorites-content-wrapper #favorites-menu-title-wrapper div:first-child h2,
+    #themes-content-wrapper #themes-menu-title-wrapper div:first-child h2 {
+        @apply text-xl font-bold;
+    }
+
+    #favorites-content-wrapper #favorites-menu-title-wrapper div:first-child label,
+    #themes-content-wrapper #themes-menu-title-wrapper div:first-child label {
+        @apply btn btn-ghost btn-sm btn-circle;
+    }
+
+    #favorites-content-wrapper #favorites-menu-wrapper,
+    #themes-content-wrapper #themes-menu-wrapper {
+        @apply absolute top-32 bottom-0 left-0 right-0 overflow-y-auto;
+    }
+
+    #favorites-content-wrapper ul,
+    #themes-content-wrapper ul {
+        @apply px-4 space-y-2;
+    }
+
+    #themes-content-wrapper ul li a {
+        @apply flex items-center gap-4;
+    }
+
+    #themes-content-wrapper ul li a span {
+        @apply bg-base-100 rounded-lg p-2;
+    }
+
+    /* Footer */
+
+    footer .social-links {
+        @apply grid grid-flow-col gap-4;
+    }
+
+    footer .social-links a {
+        @apply btn btn-ghost btn-circle;
+    }
+
+    footer .social-links a span {
+        @apply w-8 h-8;
+    }
+
+    footer .copyright p {
+        @apply text-base-content;
+    }
+
+}

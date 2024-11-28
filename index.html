@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -15,11 +15,269 @@
 </head>
 
 <body>
+    <div id="drawer" class="drawer drawer-end bg-base-300">
+        <!-- Drawer toggle checkbox -->
+        <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
 
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
+        <!-- Page content -->
+        <div id="drawer-content" class="drawer-content">
+            <!-- Navbar -->
+            <nav>
+                <div class="navbar">
+                    <div class="navbar-start">
+                        <a href="#">LexiDeck</a>
+                    </div>
+                    <div class="navbar-end">
+                        <label for="drawer-toggle" data-drawer="favorites">
+                            <span data-icon="heart"></span>
+                        </label>
+                        <label for="drawer-toggle" data-drawer="themes">
+                            <span data-icon="brightness"></span>
+                        </label>
+                    </div>
+                </div>
+            </nav>
 
+            <!-- Main content -->
+            <main>
+                <section id="search-section">
+                    <h1>Word Search</h1>
+                    <div class="search-wrapper">
+                        <input class="search-input" type="text" placeholder="Search for a word..." required
+                            spellcheck="false">
+                        <span data-icon="search"></span>
+                        <span data-icon="close"></span>
+                    </div>
+                    <p class="info-text">Search for any existing English word and get its meaning, synonyms, and
+                        examples.
+                    </p>
+                    <ul>
+                        <li class="word">
+                            <div class="details">
+                                <p></p>
+                                <span></span>
+                            </div>
+                            <div class="word-icons">
+                                <span data-icon="heart"></span>
+                                <div class="volume-container">
+                                    <span data-icon="volume-low"></span>
+                                    <!-- <span data-icon="volume-high"></span> -->
+                                </div>
+                            </div>
+                        </li>
+                        <div class="content">
+                            <li class="meaning">
+                                <div class="details">
+                                    <p>Meaning</p>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li class="example">
+                                <div class="details">
+                                    <p>Example</p>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li class="synonyms">
+                                <div class="details">
+                                    <p>Synonyms</p>
+                                    <div class="list"></div>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </section>
+            </main>
+
+            <footer>
+                <div class="social-links">
+                    <a href="https://github.com/SebZG" target="_blank">
+                        <span data-icon="github"></span>
+                    </a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2024 lexiDeck. Powered by Merriam-Webster.</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Drawer sidebar -->
+        <aside id="drawer-sidebar" class="drawer-side">
+            <!-- Drawer overlay -->
+            <label for="drawer-toggle" class="drawer-overlay"></label>
+
+            <!-- Drawer content wrapper -->
+            <div id="drawer-content-wrapper">
+                <!-- Favorites drawer content -->
+                <div id="favorites-content-wrapper">
+                    <div id="favorites-menu-title-wrapper">
+                        <div>
+                            <h2>Favorite Words</h2>
+                            <label for="drawer-toggle">✕</label>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div id="favorites-menu-wrapper">
+                        <ul class="menu menu-lg">
+                            <li><a>No favorite words yet</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Themes drawer content -->
+                <div id="themes-content-wrapper">
+                    <div id="themes-menu-title-wrapper">
+                        <div>
+                            <h2>Theme Settings</h2>
+                            <label for="drawer-toggle">✕</label>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div id="themes-menu-wrapper">
+                        <ul class="menu menu-lg">
+                            <li>
+                                <a data-theme="light">
+                                    <span>Light</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="dark">
+                                    <span>Dark</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="wireframe">
+                                    <span>Wireframe</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="cupcake">
+                                    <span>Cupcake</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="lemonade">
+                                    <span>Lemonade</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="pastel">
+                                    <span>Pastel</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="garden">
+                                    <span>Garden</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="emerald">
+                                    <span>Emerald</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="lofi">
+                                    <span>Lofi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="fantasy">
+                                    <span>Fantasy</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="corporate">
+                                    <span>Corporate</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="autumn">
+                                    <span>Autumn</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="retro">
+                                    <span>Retro</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="valentine">
+                                    <span>Valentine</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="aqua">
+                                    <span>Aqua</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="coffee">
+                                    <span>Coffee</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="business">
+                                    <span>Business</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="winter">
+                                    <span>Winter</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="dim">
+                                    <span>Dim</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="sunset">
+                                    <span>Sunset</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="synthwave">
+                                    <span>Synthwave</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="halloween">
+                                    <span>Halloween</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="forest">
+                                    <span>Forest</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="luxury">
+                                    <span>Luxury</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="dracula">
+                                    <span>Dracula</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="night">
+                                    <span>Night</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-theme="black">
+                                    <span>Black</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <script src="./src/assets/icons.js"></script>
+        <script src="./src/js/script.js"></script>
 </body>
 
 </html>
