@@ -119,11 +119,11 @@
         @apply text-accent;
     }
 
-    #search-section .search-wrapper [data-icon="close"] {
+    #search-section .search-wrapper [data-icon="remove"] {
         @apply right-4 cursor-pointer text-lg hidden;
     }
 
-    #search-section .search-wrapper input:valid~[data-icon="close"] {
+    #search-section .search-wrapper input:valid~[data-icon="remove"] {
         @apply block text-accent;
     }
 
@@ -218,6 +218,10 @@
 
     #search-section ul .content::-webkit-scrollbar {
         @apply w-0;
+    }
+
+    #search-section .info-text .suggestion-word {
+        @apply cursor-pointer mr-1 underline;
     }
 
     #search-section .content li .details {
