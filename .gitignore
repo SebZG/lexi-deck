@@ -30,3 +30,5 @@ coverage/
 *.cache/
 
 docs/
+
+src/js/practice.js
