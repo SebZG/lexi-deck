@@ -37,15 +37,23 @@
     }
 
     nav .navbar {
-        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+        @apply flex-col items-center gap-4 text-center xs:flex-row xs:items-center xs:justify-between xs:text-left max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    nav .navbar-start {
+        @apply w-full flex justify-center xs:w-auto xs:justify-start;
+    }
+
+    nav .navbar-end {
+        @apply w-full flex justify-center xs:w-auto xs:justify-end;
     }
 
     main {
-        @apply flex-1 flex flex-col  items-center w-full;
+        @apply flex-1 flex flex-col items-center w-full;
     }
 
     #search-section {
-        @apply w-[420px] mt-[6%] mb-[7%] pt-6 px-7 pb-11 bg-base-100 card shadow-lg;
+        @apply w-[90%] xs:w-[420px] mt-[12%] mb-[13%] xs:mt-[10%] xs:mb-[11%] sm:mt-[8%] sm:mb-[9%] md:mt-[7%] md:mb-[8%] lg:mt-[5%] lg:mb-[6%] pt-6 px-7 pb-11 bg-base-100 card shadow-lg;
     }
 
     footer {
