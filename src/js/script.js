@@ -1,5 +1,5 @@
 // Function to insert icons into elements with data-icon attribute
-function insertIcons() {
+export function insertIcons() {
     const iconElements = document.querySelectorAll('[data-icon]');
     iconElements.forEach(element => {
         const iconName = element.getAttribute('data-icon');
@@ -10,7 +10,7 @@ function insertIcons() {
 }
 
 // Function to handle theme switching
-function initializeTheme() {
+export function initializeTheme() {
     // Get saved theme from localStorage or default to 'light'
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
@@ -27,7 +27,7 @@ function initializeTheme() {
 }
 
 // Function to handle drawer content visibility
-function initializeDrawer() {
+export function initializeDrawer() {
     const drawerButtons = document.querySelectorAll('[data-drawer]');
     const drawerContents = {
         favorites: document.getElementById('favorites-content-wrapper'),
@@ -67,7 +67,6 @@ function initializeDrawer() {
         }
     });
 }
-
 
 // Run when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
