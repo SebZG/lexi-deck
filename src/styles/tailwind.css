@@ -64,7 +64,7 @@
 @layer components {
 
     nav .navbar-start a {
-        @apply btn btn-ghost text-2xl text-base-content;
+        @apply btn btn-ghost text-2xl text-accent;
     }
 
     nav .navbar-end label {
